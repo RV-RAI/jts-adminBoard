@@ -1,0 +1,94 @@
+<div class="wrapper main-dashboard">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <a routerLink="/dashboard"><img src="../../assets/images/logo.png" class="img-responsive"
+                            alt=""></a>
+                </div>
+                <div class="profile-usertitle">
+                    <div routerLink="/users/sop" class="profile-usertitle-name">マイショップ</div>
+                    <div class="profile-usertitle-status">
+                        {{localStorageData.salon_name}}</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <ul class="list-unstyled components left-menu">
+            <li>
+                <a routerLink="/dashboard">ダッシュボード</a>
+            </li>
+            <li>
+                <a routerLink="/users">マイショップ</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li><a (click)="onLogout()" class="download">ログアウト</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-80">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn active">
+                    <img src="../../assets/images/menu-icon.png">
+                </button>
+            </div>
+        </nav>
+        <div class="main-content">
+            <div class="container">
+                <div class="text-center block-menu">
+                    <img class="mb-80" src="../../assets/images/jts-board-logo-big.png">
+                    <ul class="block-menu-list">
+                        <li class="bottom-border">
+                            <a routerLink="/customer-list">
+                                <img class="mb-20" src="../../assets/images/icons/dashboard/customer-list.png">
+                                <span>顧客情報</span>
+                            </a>
+                        </li>
+                        <li class="bottom-border left-border">
+                            <a href="#">
+                                <img class="mb-20" src="../../assets/images/icons/dashboard/calendar.png">
+                                <span>カレンダー</span>
+                            </a>
+                        </li>
+                        <li class="bottom-border left-border">
+                            <a routerLink="/customer-sale">
+                                <img class="mb-20" src="../../assets/images/icons/dashboard/sales.png">
+                                <span>販売</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="mb-20" src="../../assets/images/icons/dashboard/expenses.png">
+                                <span>経費</span>
+                            </a>
+                        </li>
+                        <li class="left-border">
+                            <a href="#">
+                                <img class="mb-20" src="../../assets/images/icons/dashboard/analytics.png">
+                                <span>分析学</span>
+                            </a>
+                        </li>
+                        <li class="left-border">
+                            <a href="#">
+
+                                <img class="mb-20" src="../../assets/images/icons/dashboard/attendance.png">
+                                <span>出勤 退勤</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal Attendance End --->
+<app-footar></app-footar>

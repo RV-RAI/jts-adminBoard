@@ -1,0 +1,197 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="loginMain">
+          <form (ngSubmit)="onSignup2()" [formGroup]="signupForm">
+              <div class="compLogo text-center mb-50">
+                <img src="../../../assets/images/jts-board-logo.png">
+              </div>
+             
+                  <!-- <p *ngIf="datasaved" class="danger"><span>{{msg}}</span> </p> -->
+     <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="name" placeholder="代表者の名前" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('name').valid}">
+                </div>
+            </div>
+            <div class="col-md-6"> 
+                <div class="form-group position-relative">
+                    <span class="form-icon">〒</span>
+                    <input type="text" formControlName="zip_code" class="form-control iconFront" placeholder="郵便番号"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('zip_code').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="prefecture" placeholder="都道府県" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('prefecture').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="city" placeholder="市" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('city').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="address2" placeholder="区・町・番地" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('address2').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="address1" placeholder="アパート・マンション名" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('address1').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input [textMask]="{mask: mask}"  type="text" formControlName="tel" placeholder="電話番号" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('tel').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="website" placeholder="ホームページのURL" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('website').valid}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" type="hidden"  name="user_id"  value="{{user_id}}"  class="form-control"
+                    >
+                </div>
+
+               
+
+            </div>
+
+
+            <div class="col-12 mb-10">
+                <h6 class="mb-20">掲載中の集客用広告媒体を全て選択してください</h6>
+                <ul class="regCheckPanel mb-20">
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">ホットペッパービューティー</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">アイスポット</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">ミニモ</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">楽天ビューティー</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">エキテン</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">ネイルブック</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">EPARK</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Others その他</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 mb-20">
+                <h6 class="mb-20">サービスを選択</h6>
+                <ul class="regCheckPanel">
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">美容室</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">ネイル</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">アイラッシュ</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">エステティック</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">フェイシャル</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">リラクゼーション</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">脱毛</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">マッサージ</label>
+                    </li>
+                    <li class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Others その他</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <input type="text" formControlName="sales_code" placeholder="sales_code" class="form-control">
+                </div>
+            </div>
+           <div class="col-12">
+                <div class="regCheckPanel mb-30">
+                    <h6 class="regHeading mb-30">ご確認項目</h6>
+                    <h6 class="mt-10 mb-10">ご確認項目</h6>
+                    <ul>
+                        <li>無料トライアルの期限は１ヶ月です。</li>
+                        <li>無料トライアルが終了後、本契約が自動更新されます。</li>
+                        <li>解約を希望の方は、無料トライアル期間中にマイショップより解約手続きを行ってください。</li>
+                        <li>無料トライアルが終了後は、毎月15,000円（+税）で全システムが利用できます。</li>
+                        <li>支払い方法はクレジットカード決済です。</li>
+                        <li>プライバシーポリシーに必ずご同意の上、お申込みください。</li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 mb-30">
+                <div class="form-check mb-10">
+                 
+                      <input class="form-check-input" formControlName="checkbox1" type="checkbox" id="inlineCheckbox1" value="option1"
+                      [ngClass]="{'is-invalid': submitted && !signupForm.get('checkbox1').valid}"
+                      />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                   > JTSボード無料トライアル基本契約書とJTSボード基本契約書を必ず確認の上、お申込みください。</label>
+                </div>
+
+                <div class="form-check mb-10">
+                    <input class="form-check-input" formControlName="checkbox2" type="checkbox" id="inlineCheckbox2" value="option2"
+                    [ngClass]="{'is-invalid': submitted && !signupForm.get('checkbox2').valid}">
+                    <label class="form-check-label" for="inlineCheckbox2">同意します</label>
+                </div>
+            </div>
+            <div class="col-12">
+               
+                <button  class="btn">新規登録</button>
+            </div>
+    </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

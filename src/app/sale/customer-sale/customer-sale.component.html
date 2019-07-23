@@ -1,0 +1,266 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="active">
+    <div class="sidebar-header">
+      <div class="profile-sidebar">
+        <div class="profile-userpic">
+          <a routerLink="/dashboard"><img src="../../assets/images/logo.png" class="img-responsive" alt=""></a>
+        </div>
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">マイショップ</div>
+          <div class="profile-usertitle-status">
+            {{localStorageData.salon_name}}</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <ul class="list-unstyled components left-menu">
+      <li>
+        <a routerLink="/dashboard">ダッシュボード</a>
+      </li>
+      <li>
+        <a routerLink="/users/my-shop">マイショップ</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+      <li><a routerLink="/login" class="download">ログアウト</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="navbar-btn active">
+          <img src="../../assets/images/menu-icon.png">
+        </button>
+        <a class="navbar-brand" href="#"><img src="../../../assets/images/jts-board-white-logo.png"></a>
+        <a href="#" class="user-profile"><i class="far fa-user"></i></a>
+      </div>
+    </nav>
+
+    <div class="page-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-6 col-lg-4">
+            <h4 class="">今日の売上</h4>
+          </div>
+          <!-- <div class="col-sm-4 col-md-6 col-lg-8 text-right">
+            <a href="#" title="Add Customer" alt="Add Customer" data-toggle="modal" data-target="#modelAddCustomer"
+              data-id="" class="btn addCustomer">顧客を追加</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="container">
+        <div class="plainTabs mb-20">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="active" href="#current-analytics" role="tab" data-toggle="tab">
+                <img class="gray" src="../../../assets/images/icons/sales/today-sell-g(200).png"><img class="yellowIcon"
+                  src="../../../assets/images/icons/sales/today-sell(200).png"> 変動経費</a>
+            </li>
+            <li class="nav-item">
+              <a class="" href="#prediction-analytics" role="tab" data-toggle="tab">
+                <img class="gray" src="../../../assets/images/icons/sales/total-sell-g(200).png"><img class="yellowIcon"
+                  src="../../../assets/images/icons/sales/total-sell(200).png">固定経費</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active show" id="current-analytics">
+            <div class="text-center">
+              <button type="button" class="btn btn-primary">2019年04月05</button>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="prediction-analytics">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <select class="form-control">
+                    <option selected="selected" disabled="disabled">開始日</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <select class="form-control">
+                    <option selected="selected" disabled="disabled">終了日</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2 text-right">
+                <a href="#" class="btn">送信</a>
+              </div>
+            </div>
+
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                サービス
+              </div>
+              <div class="panel-body">
+                <table class="table salesTable table-custom mb-0" style="width:100%">
+                  <thead>
+                    <tr class="bg-light-cyan">
+                      <th>サービス</th>
+                      <th>合計売上</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ネイル</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>ネイル</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>ネイル</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>ネイル</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>ネイル</td>
+                      <td>8,640 円</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                製品ス
+              </div>
+              <div class="panel-body">
+                <table class="table salesTable" style="width:100%">
+                  <thead>
+                    <tr class="bg-light-cyan">
+                      <th>製品 </th>
+                      <th>合計売上</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>プレミアムスネイルパック</td>
+                      <td>5,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>プレミアムスネイルパック</td>
+                      <td>5,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>プレミアムスネイルパック</td>
+                      <td>5,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>プレミアムスネイルパック</td>
+                      <td>5,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>プレミアムスネイルパック</td>
+                      <td>5,640 円</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                スタッフ
+              </div>
+              <div class="panel-body">
+                <table class="table salesTable" style="width:100%">
+                  <thead>
+                    <tr class="bg-light-cyan">
+                      <th>スタッフ</th>
+                      <th>顧客人数</th>
+                      <th>合計売上</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>大原 めぐみ</td>
+                      <td>2</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>本山 あゆみ</td>
+                      <td>2</td>
+                      <td>5,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>大原 めぐみ</td>
+                      <td>2</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>本山 あゆみ</td>
+                      <td>2</td>
+                      <td>5,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>大原 めぐみ</td>
+                      <td>2</td>
+                      <td>8,640 円</td>
+                    </tr>
+                    <tr>
+                      <td>本山 あゆみ</td>
+                      <td>2</td>
+                      <td>5,640 円</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-body">
+                <table style="width:100%">
+                  <tr class="text-center">
+                    <td>
+                      <div class="mb-20">カード支払い</div>
+                      <h5>8,640 円</h5>
+                    </td>
+                    <td>
+                      <h3 class="primary-color">+</h3>
+                    </td>
+                    <td>
+                      <div class="mb-20">現金支払い</div>
+                      <h5>5,400 円</h5>
+                    </td>
+                    <td>
+                      <h3 class="primary-color">=</h3>
+                    </td>
+                    <td>
+                      <div class="primary-color mb-20">合計売上</div>
+                      <h5 class="primary-color">14,040 円</h5>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-footar></app-footar>

@@ -1,0 +1,79 @@
+<app-pop-mobels-myshop></app-pop-mobels-myshop>
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" class="active">
+      <div class="sidebar-header">
+        <div class="profile-sidebar">
+          <div class="profile-userpic">
+            <a routerLink="/dashboard"><img src="../../assets/images/logo.png" class="img-responsive" alt=""></a>
+          </div>
+          <div class="profile-usertitle">
+            <div class="profile-usertitle-name">マイショップ</div>
+            <div class="profile-usertitle-status">
+              {{localStorageData.salon_name}}</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+  
+      <ul class="list-unstyled components left-menu">
+        <li>
+          <a routerLink="/dashboard">ダッシュボード</a>
+        </li>
+        <li>
+          <a routerLink="/users/my-shop">マイショップ</a>
+        </li>
+      </ul>
+  
+      <ul class="list-unstyled CTAs">
+        <li><a routerLink="/login" class="download">ログアウト</a></li>
+      </ul>
+    </nav>
+    <!-- Page Content Holder -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-btn active" id="sidebarCollapse" >
+                    <img src="../../assets/images/menu-icon.png">
+                </button>
+                <a class="navbar-brand" href="#"><img src="../../../assets/images/jts-board-white-logo.png"></a>
+                <a href="#" class="user-profile"><i class="far fa-user"></i></a>
+            </div>
+        </nav>
+        <div class="page-title">
+            <div class="container">
+                <h4 class="myShopHead">My Shop</h4>
+            </div>
+        </div>
+        <!-- =======================tabs or my shop page =========================== -->
+        <app-my-shop-tabs></app-my-shop-tabs>
+        <!-- =======================tabs or my shop page =========================== -->
+
+        <div class="main-content">
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="tabContent">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-salon" role="tabpanel"
+                                    aria-labelledby="pills-salon-tab">
+<!--======================= default open my_shop component===================================-->
+                                    <router-outlet></router-outlet>
+<!--======================= default open my_shop component===================================-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer text-center">
+    Copyright © <a href="#">Zein El Dine International</a> 2019. All right reserved.
+</footer>

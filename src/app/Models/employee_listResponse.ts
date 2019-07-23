@@ -1,0 +1,32 @@
+// tslint:disable-next-line:class-name
+export class Employee_listResponse {
+      id: any;
+      last_name: any;
+      first_name: any;
+      user_id: any;
+      service_id: any;
+      touch_id: any;
+      emp_code: any;
+      name: any;
+      email: any;
+      is_technician: any;
+      dob: any;
+      phone: any;
+      joining_date: any;
+      designation: any;
+      salary: any;
+      address: any;
+      image: any;
+      status: any;
+      role_id: any;
+      role_title: any;
+      lunch_time: any;
+      start_lunch_time: any;
+      end_lunch_time: any;
+      device_type: any;
+      employement_type: any;
+      device_token: any;
+      created: any;
+      modified: any;
+      service_name: any;
+}

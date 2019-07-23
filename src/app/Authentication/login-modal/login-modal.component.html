@@ -1,0 +1,31 @@
+<!-- popup model forgat form -->
+<div class="modal fade" id="forgotpasword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">パスワードをお忘れですか？</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+
+         
+      <div class="modal-body">
+          <p *ngIf="datasaved" class="danger"><span>{{msg}}</span> </p>
+        <form (ngSubmit)="onForgat()"  [formGroup]="forgatpasswordForm">
+          <div class="form-group mb-0">
+            <input type="email" class="form-control" formControlName="mail" id="recipient-name" placeholder="Eメール"
+            [ngClass]="{'is-invalid': submitted && !forgatpasswordForm.get('mail').valid}">
+          </div>
+          
+         </form>
+       </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-black btn-secondary" data-dismiss="modal">キャンセル</button>
+        <button  type="button" class="btn btn-primary" (click)="onForgat()" >送信</button>
+    </div>                                  
+    </div>
+  </div>
+</div>
+
+ <!-- popup model forgat form -->

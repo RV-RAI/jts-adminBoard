@@ -1,0 +1,262 @@
+/*
+    JTS Board
+*/
+
+
+/*@media (min-width: 1440px) {
+    .container {max-width: 1410px;}
+}
+*/
+@media (min-width: 1200px){
+
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .navbar {font-size: 12px;}
+    .navbar-brand img {height: 45px;}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .navbar {font-size: 11px;}
+    .navbar-brand img {height: 45px;}
+    .left-header p, .right-header p {font-size: 10px;}
+    .phone-number {font-size: 21px;}
+    .phone-icon img{height: 32px;}
+}
+
+/** Large devices (desktops, less than 1200px)*/
+
+@media (max-width: 1199.98px) { 
+
+    .mb-100{margin-bottom: 80px;}
+    .mb-80{margin-bottom: 65px;}
+    .mb-60{margin-bottom: 50px;}
+    .mb-50{margin-bottom: 40px;}
+    .mb-40{margin-bottom: 32px;}
+    .mb-30{margin-bottom: 24px;}
+    .mb-20{margin-bottom: 16px;}
+    .mb-15{margin-bottom: 12px;}
+    .mb-10{margin-bottom: 8px;}
+    .mb-5{margin-bottom: 5px;}
+
+    .ml-100{margin-left: 80px;}
+    .ml-80{margin-left: 65px;}
+    .ml-60{margin-left: 50px;}
+    .ml-50{margin-left: 40px;}
+    .ml-40{margin-left: 32px;}
+    .ml-30{margin-left: 24px;}
+    .ml-20{margin-left: 16px;}
+    .ml-15{margin-left: 12px;}
+    .ml-10{margin-left: 8px;}
+    .ml-5{margin-left: 5px;}
+
+    .mr-100{margin-right: 80px;}
+    .mr-80{margin-right: 65px;}
+    .mr-60{margin-right: 50px;}
+    .mr-50{margin-right: 40px;}
+    .mr-40{margin-right: 32px;}
+    .mr-30{margin-right: 24px;}
+    .mr-20{margin-right: 16px;}
+    .mr-15{margin-right: 12px;}
+    .mr-10{margin-right: 8px;}
+    .mr-5{margin-right: 5px;}
+
+    .mt-100{margin-top: 80px;}
+    .mt-80{margin-top: 65px;}
+    .mt-60{margin-top: 50px;}
+    .mt-50{margin-top: 40px;}
+    .ml-40{margin-top: 32px;}
+    .mt-30{margin-top: 24px;}
+    .mt-20{margin-top: 16px;}
+    .mt-15{margin-top: 12px;}
+    .mt-10{margin-top: 8px;}
+    .mt-5{margin-top: 5px;}
+
+
+
+    .panel-padding { padding: 60px 0 28px;}
+
+
+    .block-link {padding: 20px 5px; letter-spacing: 0;font-size: 16px;}
+    .block-link:hover,.block-link:focus {letter-spacing: 1.5px;}
+    #sidebar {min-width: 240px;max-width: 240px;}
+    #sidebar.active {margin-left: -240px;transform: rotateY(90deg);}
+    .page-title {padding: 15px 0; margin-bottom: 15px;}
+    .block-link {padding: 15px 5px; margin-bottom: 15px;}
+    .main-content {padding: 0px;}
+    .list > li {width: 33.3333%;}
+    .staff-detail-button li a {height: 36px; width: 36px; line-height: 36px;font-size: 16px;}
+    .attendance-detail li {font-size: 12px;}
+    .monthly-attendance-b {margin-bottom: 20px;}
+    .dashboard-block{text-align: center;}
+
+    .fuction-list li a img {height: 75px;}
+    .basic-plan-panel {padding: 0 20%;}
+
+
+
+    
+
+}
+
+
+/** Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) { 
+
+    .mb-100{margin-bottom: 50px;}
+    .mb-80{margin-bottom: 40px;}
+    .mb-60{margin-bottom: 30px;}
+    .mb-50{margin-bottom: 25px;}
+    .mb-40{margin-bottom: 20px;}
+    .mb-30{margin-bottom: 15px;}
+    .mb-20{margin-bottom: 10px;}
+    .mb-15{margin-bottom: 8px;}
+    .mb-10{margin-bottom: 5px;}
+
+    .ml-100{margin-left: 50px;}
+    .ml-80{margin-left: 40px;}
+    .ml-60{margin-left: 30px;}
+    .ml-50{margin-left: 25px;}
+    .ml-40{margin-left: 20px;}
+    .ml-30{margin-left: 15px;}
+    .ml-20{margin-left: 10px;}
+    .ml-15{margin-left: 8px;}
+    .ml-10{margin-left: 5px;}
+
+    .mr-100{margin-right: 50px;}
+    .mr-80{margin-right: 40px;}
+    .mr-60{margin-right: 30px;}
+    .mr-50{margin-right: 25px;}
+    .mr-40{margin-right: 20px;}
+    .mr-30{margin-right: 15px;}
+    .mr-20{margin-right: 10px;}
+    .mr-15{margin-right: 8px;}
+    .mr-10{margin-right: 5px;}
+
+    .mt-100{margin-top: 50px;}
+    .mt-80{margin-top: 40px;}
+    .mt-60{margin-top: 30px;}
+    .mt-50{margin-top: 25px;}
+    .ml-40{margin-top: 20px;}
+    .mt-30{margin-top: 15px;}
+    .mt-20{margin-top: 10px;}
+    .mt-15{margin-top: 8px;}
+    .mt-10{margin-top: 5px;}
+
+    .btn {padding: 8px 30px;}
+    .form-control {padding: 8px 15px;}    
+
+    .fuction-list li {width: 25%;}
+    .basic-plan-panel {padding: 0 15%;}
+    #back-top-button {width: 50px; height: 50px;line-height: 45px;font-size: 30px;bottom: 15px;right: 15px;}
+    .panel-padding {padding: 40px 0 20px;}
+
+
+
+
+   
+    }
+
+
+/** Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) {
+ 
+    .h1, h1 {font-size: 1.8rem;}
+    .h2, h2 {font-size: 1.6rem;}
+    .h3, h3 {font-size: 1.4rem;}
+    .h4, h4 {font-size: 1.2rem;}
+    .h5, h5 {font-size: 1rem;}
+    .h6, h6 {font-size: 0.8rem;}
+     p {font-size: 0.9em;}
+
+
+    .main-heading {font-size: 1.25rem;}
+    .sub-heading {font-size: 0.85rem;}
+
+    .slider-content-inner h1{font-size: 1.5rem}
+    .slider-content-inner h4{font-size: 1rem;}
+
+    #sidebar {margin-left: -240px;transform: rotateY(90deg);}
+    #sidebar.active {margin-left: 0; transform: none;}
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {transform: none; opacity: 1; margin: 5px auto;}
+    #sidebarCollapse.active span {margin: 0 auto;}
+    #sidebarCollapse.active span:first-of-type {transform: rotate(45deg) translate(2px, 2px);}
+    #sidebarCollapse.active span:nth-of-type(2) { opacity: 0;}
+    #sidebarCollapse.active span:last-of-type {transform: rotate(-45deg) translate(1px, -1px);}
+    .navbar-brand img{height: 40px}
+
+    .btn {font-size: 0.8rem;}
+    .monthly-attendance-b {margin-bottom: 15px;}
+
+     .custom-nav-tab .nav-item {margin-bottom: 20px;}
+
+     .comment-holder .comment-text h5.comment-name {margin:0;margin-bottom: 5px; float: none;}
+     .comment-holder .comment-text .comment-info span.comment-date {margin-left: 0;display: block;margin-bottom: 10px;}
+     .case-study-list {flex-wrap: wrap;}
+     .case-study-list li {width: 50%;}
+     .basic-plan-panel {padding: 0;}
+     .fuction-list li a {padding: 20px 0;font-size: 14px;}
+     .cost-heading {padding: 15px;font-size: 20px; }
+     .basic-plan-list li a {padding: 15px}
+     .basic-plan-list li .price-b {font-size: 36px;}
+     .fuction-list li {width: 50%;}
+     .fuction-list li a img {height: 60px;}
+     .right-header  {display: none !important;}
+     .left-header p, .right-header p {font-size: 11px;}
+
+     .case-study-list li {padding-bottom: 15px;}
+      p {font-size: 0.9em;}
+
+     /** change to icons in mobile devices**/
+    .pillsIcons{ }
+    .cusNoteSales tr td a{ padding: 25px; display: inline-block; font-size: 16px; color: #000;}
+
+ }
+
+
+
+/** Extra small devices (portrait phones, less than 576px)**/
+@media (max-width: 575.98px) { 
+
+
+    .h1, h1 {font-size: 1.5rem;}
+    .h2, h2 {font-size: 1.40rem;}
+    .h3, h3 {font-size: 1.15rem;}
+    .h4, h4 {font-size: 1rem;}
+    .h5, h5 {font-size: 0.8rem;}
+    .h6, h6 {font-size: 0.70rem;}
+
+    .table-gap td, .table-gap th {padding: 0.5rem;}
+
+    p {font-size: 0.9em;}
+     .panel-padding {padding: 20px 0 10px;}     
+    .basic-plan-list { margin-bottom: 20px;}
+
+    .profile-detail {display: block;}
+    .profile-detail label {margin-right: 0; display: block; width: 100%;border-right: none; }
+    .profile-detail span { display: block; width: 100%; }
+    .list > li {width: 50%; margin-bottom: 10px;}
+    .list li .staff-img {margin-bottom: 10px;}
+    .staff-name {font-size: 13px; height: 22px;}
+    .list li:hover .staff-name {font-size: 13px;}
+    .staff-detail-button li a {height: 36px;width: 36px;line-height: 36px;font-size: 16px;}
+    .filter-group .form-control {margin-bottom: 10px;}
+     #logreg-forms{ width:300px;}
+
+     .custom-nav-tab .nav-item {margin-right: 10px; margin-bottom: 15px;}
+     .custom-nav-tab .nav-link {padding: 0.75rem;font-size: 13px;}
+
+     .payment-b .main-content {padding-top: 30px;}
+     .fuction-list li a img {height: 45px;}
+
+     .case-study-list li {width: 100%;}
+     .myShopTabs .nav-pills .nav-link { padding: 8px 0;}
+     .myShopTabs ul li { margin: 0 5px; }
+ }
+
+
+
+

@@ -1,0 +1,410 @@
+<div class="page-title">
+  <div class="container salesHeader d-flex">
+    <h4 class="">カスタマーノート履歴リスト</h4>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="container">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <!-- <div class="addButton">
+  
+            <ul class="d-flex justify-content-between">
+              <li>&nbsp;</li>
+              <li>
+                <a href="/customerhistories/add_note/4804" class="btn"><img src="../../../assets/images/plus-white.png"
+                    alt="">
+                </a>
+              </li>
+  
+              <li class="mr-10">
+                <a href="#" (click)="viewcust()" title="View Customer" alt="View Customer" data-toggle="modal"
+                  data-target="#modelViewCustomer" class="btn">
+                  <img src="../../../assets/images/customer-info-white.png" alt="">
+                </a>
+              </li>
+  
+            </ul>
+          </div> -->
+
+        <div class="addButton">
+          <ul class="d-flex justify-content-between">
+            <li>&nbsp;</li>
+            <li>
+              <a href="#" class="btn"><img src="../../../assets/images/plus-white.png" alt="">
+              </a>
+            </li>
+
+            <li class="mr-10">
+              <a (click)="viewcust()" class="btn" title="View Customer" alt="View Customer" data-toggle="modal"
+                data-target="#modelEditCustomer">
+                <img src="../../../assets/images/customer-info-white.png" alt="">
+              </a>
+            </li>
+
+          </ul>
+        </div>
+        <table class="table table-custom mb-0" style="width:100%">
+          <tbody class="listTable" id="categoryTable">
+            <ng-container *ngFor="let custanal of custanal">
+              <tr (click)="getnote()" routerLink="/get_customer_analysis_dates/customer-note" *ngIf="custanal">
+                <td>{{custanal.id}}</td>
+                <td>{{custanal.date}}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal to View Customer -->
+<!-- <div class="modal fade show" id="modelViewCustomer">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title">
+
+          {{viewcustomer.name}}
+
+
+
+        </h5>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+
+      <div class="addButton mb-20">
+        <ul class="d-flex justify-content-end">
+          <li class="mr-10">
+            <a href="#" class="btn" id="editbtn" (click)="showId(viewcustomer.id);" data-toggle="modal"
+              data-target="#modelEditCustomer" data-dismiss="modal">
+              <img src="../../../assets/images/edit-w.png" alt=""></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="modal-body">
+        <div id="viewCustomerDetail">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.name}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+                  {{viewcustomer.service_name}}
+                </label>
+                <span class="value-name"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.email}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.gender}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.dob}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.tel}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.zip_code}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.address1}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.subscription_of_news}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+
+                  {{viewcustomer.job}}
+
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+                  {{viewcustomer.know_about_company}}
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+                  {{viewcustomer.how_did_you_come}}
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+                  {{viewcustomer.created}}
+                </label>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-detail">
+                <label class="label-name">
+                  {{viewcustomer.modified}}
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">
+          close up
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+<!-- Modal to View Customer End -->
+
+<!-- Modal to Edit Customer -->
+<div class="modal fade" id="modelEditCustomer">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title">
+          {{viewcustomer.name}}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <form (ngSubmit)="oneditCustomer()" [formGroup]="editcustomerForm">
+        <div class='modal-body'>
+          <div class="addButton mb-20">
+            <ul class="d-flex justify-content-end">
+              <li class="">
+                <a href="javascript::" class="btn" id="editbtn">
+                  <img src="../../../assets/images/edit-w.png" alt=""></a>
+              </li>
+            </ul>
+          </div>
+
+          <input type="hidden" class="form-control" formControlName="customer_id" name="data[Customer][id]" />
+          <input type="hidden" class="form-control" formControlName="user_id" name="data[user][id]" />
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="[Customer][last_name]" value="{{viewcustomer.last_name}}" placeholder="苗字"
+                  formControlName="last_name" required="1" class="form-control enable-edit" maxlength="30" type="text"
+                  disabled="disabled" readonly="true" />
+
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][first_name]" value="{{viewcustomer.first_name}}" placeholder="ファーストネーム"
+                  class="form-control enable-edit" formControlName="first_name" required="1" maxlength="30" type="text"
+                  disabled="disabled" readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][kana_last_name]" value="{{viewcustomer.kana_last_name}}" placeholder="かな姓"
+                  class="form-control enable-edit" formControlName="kana_last_name" required="1" maxlength="30"
+                  type="text" disabled="disabled" readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][kana_first_name]" value="{{viewcustomer.kana_first_name}}" required="1"
+                  placeholder="かなファーストネーム" class="form-control enable-edit" formControlName="kana_first_name"
+                  maxlength="30" type="text" disabled="disabled" readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <select name="data[Customer][service_id]" required="1" placeholder="サービス"
+                  class="form-control enable-edit" formControlName="service_id" disabled="disabled" readonly="true">
+                  <option value="0">Select Service</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][email]" required="1" value="{{viewcustomer.email}}" placeholder="メール"
+                  class="form-control enable-edit" formControlName="email" maxlength="255" type="email"
+                  disabled="disabled" readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][tel]" required="1" value="{{viewcustomer.tel}}" placeholder="電話 No"
+                  formControlName="tel enable-edit" class="form-control" type="text" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][city]" required="1" value="{{viewcustomer.city}}" placeholder="市町村"
+                  formControlName="city enable-edit" class="form-control" type="text" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][address1]" required="1" value="{{viewcustomer.address1}}" placeholder="道の名前"
+                  class="form-control enable-edit" formControlName="address1" type="text" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][address2]" required="1" value="{{viewcustomer.address2}}"
+                  placeholder="アパート名" class="form-control enable-edit" formControlName="address2" type="text"
+                  disabled="disabled" readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][zip_code]" required="1" value="{{viewcustomer.zip_code}}" placeholder="郵便番号"
+                  class="form-control enable-edit" formControlName="zip_code" type="text" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <select name="data[Customer][gender]" required="1" placeholder="性別" formControlName="gender "
+                  class="form-control enable-edit" disabled="disabled" readonly="true">
+                  <option value="">性別</option>
+                  <option value="male">男性</option>
+                  <option value="female">女性</option>
+                </select> </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][dob]" value="{{viewcustomer.dob}}" placeholder="誕生日"
+                  class="form-control enable-edit" formControlName="dob" type="date" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][age]" required="1" value="{{viewcustomer.age}}" placeholder="年齢"
+                  class="form-control enable-edit" formControlName="age" type="text" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][job]" required="1" value="{{viewcustomer.job}}" placeholder="職業"
+                  formControlName="job" class="form-control enable-edit" type="text" disabled="disabled"
+                  readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][subscription_of_news]" required="1"
+                  value="{{viewcustomer.subscription_of_news}}" placeholder="お得な情報を受取る" class="form-control enable-edit"
+                  formControlName="subscription_of_news" type="text" disabled="disabled" readonly="true" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][know_about_company]" value="{{viewcustomer.know_about_company}}"
+                  placeholder="どうしてこのサロンを知りましたか？" class="form-control enable-edit" formControlName="know_about_company"
+                  required="1" type="text" disabled="disabled" readonly="true" /> </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input name="data[Customer][how_did_you_come]" value="{{viewcustomer.how_did_you_come}}"
+                  placeholder="何でサロンまでお越しになられましたか？" class="form-control enable-edit" formControlName="how_did_you_come"
+                  required="1" maxlength="255" type="text" disabled="disabled" readonly="true" />
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class='modal-footer'>
+          <button type='button' class='btn' data-dismiss='modal'>閉じる</button>
+          <input class="btn" type="submit" id="editbttn" style="display: none" value="更新" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal to Edit Customer End -->
+<app-footar></app-footar>

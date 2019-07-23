@@ -1,0 +1,280 @@
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <a routerLink="/dashboard"><img src="../../assets/images/logo.png" class="img-responsive" alt=""></a>
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">マイショップ</div>
+                    <div class="profile-usertitle-status">
+                        {{localStorageData.salon_name}}</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <ul class="list-unstyled components left-menu">
+            <li>
+                <a routerLink="/dashboard">ダッシュボード</a>
+            </li>
+            <li>
+                <a routerLink="/users/my-shop">マイショップ</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li><a routerLink="/login" class="download">ログアウト</a></li>
+        </ul>
+    </nav>
+    <!-- Page Content Holder -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-btn active" id="sidebarCollapse">
+                    <img src="../../assets/images/menu-icon.png">
+                </button>
+                <a class="navbar-brand" href="#"><img src="../../../assets/images/jts-board-white-logo.png"></a>
+                <a href="#" class="user-profile"><i class="far fa-user"></i></a>
+            </div>
+        </nav>
+        <!-- Page Content Holder -->
+        <div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-6 col-lg-4">
+                        <h4 class="">顧客リスト</h4>
+                    </div>
+                    <div class="col-sm-4 col-md-6 col-lg-8 text-right">
+                        <a href="#" title="Add Customer" alt="Add Customer" data-toggle="modal" data-target="#modelAddCustomer" data-id="" class="btn addCustomer">顧客を追加</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="container">
+
+                <div class="panel panel-default bg-light-cyan">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="first_name" placeholder="ファーストネーム" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="first_name_kana" placeholder="かなファーストネーム" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="tel" placeholder="電話 No" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="dob" placeholder="誕生日" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control">
+                    <option selected="selected" name="gender" disabled="disabled">性別</option>
+                    <option>男性</option>
+                    <option>女性</option>
+                  </select>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="" placeholder="Eメール" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="" placeholder="最後の訪問（から" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="" placeholder="ラス訪問（To" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 text-right">
+                                <button type="reset" class="btn btn-black">クリア</button>
+                                <button type="submit" class="btn ml-20">サーチ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default panel-table">
+                    <div class="panel-body">
+                        <table class="table table-custom mb-0" style="width:100%">
+                            <thead>
+                                <tr class="bg-light-cyan">
+                                    <th>名前</th>
+                                    <th>電話</th>
+                                    <th>更新日時</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let cust of customer">
+                                    <tr (click)="showId(cust.id)" routerLink="/get_customer_analysis_dates" *ngIf="cust">
+                                        <td>{{cust.name}}</td>
+                                        <td>{{cust.tel}}</td>
+                                        <td>{{cust.modified}}</td>
+
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- Modal to Add Customer -->
+        <div class="modal fade" id="modelAddCustomer">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class='modal-header'>
+                        <h5 class='modal-title'>顧客を追加</h5>
+                        <button type='button' class='close' data-dismiss='modal'>×</button>
+                    </div>
+                    <div class='modal-body'>
+
+                        <form (ngSubmit)="onAddCustmorList()" [formGroup]="addcustmorlistForm">
+
+
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" type="hidden" class="form-control" formControlName="Method_type">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" type="hidden" class="form-control" formControlName="user_id">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="last_name" placeholder="苗字" class="form-control" formControlName="last_name" maxlength="30" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('last_name').valid}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="first_name" placeholder="ファーストネーム" class="form-control" formControlName="first_name" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('first_name').valid}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="kana_last_name" placeholder="かな姓" class="form-control" formControlName="kana_last_name" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('kana_last_name').valid}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="kana_first_name" placeholder="かなファーストネーム" class="form-control" formControlName="kana_first_name" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('kana_first_name').valid}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select name="service_id" placeholder="サービス" class="form-control" formControlName="service_id" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('service_id').valid}">
+                  <option value="0">Select Service</option>
+                </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="email" placeholder="メール" class="form-control" formControlName="email" type="email" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('email').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="tel" [textMask]="{mask: mask}" placeholder="電話 No" class="form-control" formControlName="tel" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('tel').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="city" placeholder="市町村" class="form-control" formControlName="city" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('city').valid}"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="address1" placeholder="道の名前" class="form-control" formControlName="address1" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('address1').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="address2" placeholder="アパート名" class="form-control" formControlName="address2" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('address2').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="zip_code" placeholder="郵便番号" class="form-control" formControlName="zip_code" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('zip_code').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select name="gender" placeholder="性別" class="form-control" formControlName="gender" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('gender').valid}">
+                  <option value="">性別</option>
+                  <option value="male">男性</option>
+                  <option value="female">女性</option>
+                </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="dob" placeholder="誕生日" class="form-control" formControlName="dob" type="date" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('dob').valid}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="age" placeholder="年齢" class="form-control" formControlName="age" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('age').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="job" placeholder="職業" class="form-control" formControlName="job" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('job').valid}"> </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="subscription_of_news" placeholder="お得な情報を受取る" class="form-control" formControlName="subscription_of_news" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('subscription_of_news').valid}">                                        </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="know_about_company" placeholder="どうしてこのサロンを知りましたか？" formControlName="know_about_company" class="form-control" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('know_about_company').valid}">                                        </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input name="how_did_you_come" placeholder="何でサロンまでお越しになられましたか？" class="form-control" formControlName="how_did_you_come" type="text" [ngClass]="{'is-invalid': submitted && !addcustmorlistForm.get('how_did_you_come').valid}" />                                        </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button class="btn">提出する</button>
+                                </div>
+
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                    <div class='modal-footer'>
+                        <button type='button' class='btn' data-dismiss='modal'>閉じる</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal to Add Customer End -->
+        <app-footar></app-footar>
+    </div>

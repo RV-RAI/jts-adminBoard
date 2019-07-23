@@ -1,0 +1,946 @@
+<div class="modal fade" id="timingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ticketModelLabel">チケット名</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <!-- <table style="width:100%">
+                 <tr class="text-center">
+                     <td>月曜</td>
+                     <td>
+                       <label class="switch text-right">
+                         <input type="checkbox">
+                         <span class="slider round"></span>
+                       </label>
+                     </td>
+                     <td>現金支払い</td>
+                     <td><input type="text" class="form-control mb-10" placeholder="メール"></td>
+                     <td><input type="text" class="form-control mb-10" placeholder="メール"></td>
+                 </tr>
+               </table> -->
+                    <div class="row">
+                        <div class="col-md-2">月曜
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch text-right">
+                         <input type="checkbox" id="toggleBtn" onclick="myFunction()" checked >
+                         <span class="slider round"></span>
+                        </label>
+                        </div>
+                        <div class="col-md-2">メール
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" id="startTime" placeholder="10:00">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" id="closeTime" placeholder="6:00">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">月曜
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch text-right">
+                         <input type="checkbox">
+                         <span class="slider round"></span>
+                        </label>
+                        </div>
+                        <div class="col-md-2">メール
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" placeholder="10:00">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" placeholder="6:00">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">月曜
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch text-right">
+                         <input type="checkbox">
+                         <span class="slider round"></span>
+                        </label>
+                        </div>
+                        <div class="col-md-2">メール
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" placeholder="10:00">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" placeholder="6:00">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">月曜
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch text-right">
+                         <input type="checkbox">
+                         <span class="slider round"></span>
+                        </label>
+                        </div>
+                        <div class="col-md-2">メール
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" placeholder="10:00">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control mb-10" placeholder="6:00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Address</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="recipient-name" placeholder="Street">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--=======================================  View Employee table start   ===========================-->
+
+<div class="modal fade" id="editviewStaffModel" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div id="staff_all_detail">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ticketModelLabel">employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="employee-action-icons addButton">
+                        <ul class="d-flex justify-content-end">
+                            <li class="mr-10">
+                                <a href="#" class="btn" id="editbtn"><img src="../../../assets/images/edit-w.png" alt=""></a>
+                            </li>
+                            <li class="mr-10">
+                                <a class="btn attendance_info_url" href="/employees/attendance_info/243" title="Attendance" alt="Attendance">
+                                    <img src="../../../assets/images/my-shop/icons/calendar-white.png" alt=""> </a>
+                            </li>
+                            <li>
+                                <a class="btn deactive_url" href="/employees/deactive_employee/243" onclick="return confirm('Are you sure to Deactivate?')" title="Deactivate">
+                                    <img src="../../../assets/images/my-shop/icons/deactive_employee_white.png" alt=""> </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="container-fluid" *ngFor="let emp of employ_list_show">
+                        <div class="staffProfile  text-center mb-20">
+                            <div class="avatar-upload">
+                                <div class="avatar-edit">
+                                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                    <label for="imageUpload"></label>
+                                </div>
+                                <div class="avatar-preview">
+                                    <div id="imagePreview" style="background-image: url('images/');">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 ml-auto">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.last_name}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ml-auto">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.first_name}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.email}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.dob}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.phone}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.joining_date}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.emp_code}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.salary}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.address}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <select class="form-control edit">
+                                        <option >{{emp.role_id}}</option>
+                                      </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <input placeholder="誕生日" value="{{emp.emp_code}}" class="form-control edit" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ui calendar form-group">
+                                    <div class="ui popup calendar">
+                                        <select class="form-control edit">
+                                            <option >{{emp.employement_type}}</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="d-flex">この従業員は施術者です
+                                    <div class="ml-auto">
+
+                                        <label class="switch text-right" id="editToggleSwitchLable">
+                                          <input type="checkbox" name="data[Employee][is_technician]" id="editToggleSwitch" class="editToggleSwitchClass edit" value="0"> 
+                                          <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-dismiss="modal">閉じる</button>
+                                    <!-- <button type="button" class="btn btn-primary">送信</button> -->
+                                    <input class="btn btn-primary" id="editSubmit" type="submit" value="送信"> </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--=======================================  View Employee table end   ===========================-->
+
+
+<!--===================================== Edit employee staff model start  =========================-->
+<!-- ----------------edit staff model end  ------------------------->
+
+<!--====================================Add staff Model start========================================-->
+<app-add-staff-employee-model></app-add-staff-employee-model>
+<!--------------using to add-staff-employee model------>
+<!--==========================Add staff model end===============================================================-->
+
+
+<div class="modal fade" id="ticketModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ticketModelLabel">チケット名</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="チケット名">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="販売金額">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="使用可能額">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="回数">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">送信</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="productModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ticketModelLabel">チケット名</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="商品名">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="価格">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="在庫数">
+                        <input type="text" class="form-control mb-10" id="recipient-name" placeholder="販売価格">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">送信</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--My Shop Models -->
+
+<!-- Name Model Start-->
+<div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">名前</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <!-- <form action="/users/profile_edit" method="post"> -->
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1512066316" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="name" value="" placeholder="名前を入力" onkeypress="return (event.charCode >= 95 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields139564117" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1207999469" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Name Model End -->
+
+<!-- Address Model Start-->
+<div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">住所</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token117724475" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="zip_code" value="" placeholder="郵便番号を入力" required="required"><br>
+                        <input type="text" class="form-control" name="city" value="" placeholder="市区町村を入力してください" required="required"><br>
+                        <input type="text" class="form-control" name="address1" value="" placeholder="番地を入力してください" required="required"><br>
+                        <input type="text" class="form-control" name="prefecture" value="" placeholder="県を入力してください" required="required"><br>
+                        <input type="text" class="form-control" name="address2" value="" placeholder="住所を入力" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields783792212" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1371083692" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Address Model End -->
+
+<!-- Company Name Model Start-->
+<div class="modal fade" id="companyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">会社</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1012960847" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="company_name" value="" placeholder="会社名を入力してください" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields1204057523" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1809648603" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Company Name Model End -->
+
+<!-- Salon Name Model Start-->
+<div class="modal fade" id="salonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">サロン名</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token296454613" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="salon_name" value="chetan beauty school" placeholder="サロン名を入力してください" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields1771059191" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked2112214556" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Salon Name Model End -->
+
+<!-- Email Address Model Start-->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">メール</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1679310917" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="email" value="chetan54209@gmail.com" placeholder="メールアドレスを入力してください" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields1070179793" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked666287432" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Email Address Model End -->
+
+<!-- Phone Number Model Start-->
+<div class="modal fade" id="phoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">電話番号</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1143912338" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control calculator-input" name="tel" value="" placeholder="電話番号を入力" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields745436776" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked2126096379" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Phone Number Model End -->
+
+<!-- Website Model Start-->
+<div class="modal fade" id="websiteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ホームページのURL</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1167528811" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="website" value="" placeholder="ウェブサイトを入力" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields438700695" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1772759247" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Website Model End -->
+
+<!-- Pins Model Start-->
+<div class="modal fade" id="pinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">PINコード</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token851017096" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <input type="text" class="form-control" name="employee_pin_number" value="" placeholder="従業員のPIN番号を入力" required="required">
+                        <br>
+                        <input type="text" class="form-control" name="customer_pin_number" value="" placeholder="顧客の暗証番号を入力してください" required="required">
+                        <br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]"><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1820422595" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Pins Model End -->
+
+<!-- Month Start Date Model Start-->
+<div class="modal fade" id="monthStartDateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">締め日</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token863253617" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <select class="form-control" name="month_start_date">
+                                                          <option value="1">1</option>
+                                                          <option value="2">2</option>
+                                                          <option value="3">3</option>
+                                                          <option value="4">4</option>
+                                                          <option value="5">5</option>
+                                                          <option value="6">6</option>
+                                                          <option value="7">7</option>
+                                                          <option value="8">8</option>
+                                                          <option value="9">9</option>
+                                                          <option value="10">10</option>
+                                                          <option value="11">11</option>
+                                                          <option value="12">12</option>
+                                                          <option value="13">13</option>
+                                                          <option value="14">14</option>
+                                                          <option value="15">15</option>
+                                                          <option value="16">16</option>
+                                                          <option value="17">17</option>
+                                                          <option value="18">18</option>
+                                                          <option value="19">19</option>
+                                                          <option value="20">20</option>
+                                                          <option value="21">21</option>
+                                                          <option value="22">22</option>
+                                                          <option value="23">23</option>
+                                                          <option value="24">24</option>
+                                                          <option value="25">25</option>
+                                                          <option value="26">26</option>
+                                                          <option value="27">27</option>
+                                                          <option value="28">28</option>
+                                                          <option value="29">29</option>
+                                                          <option value="30">30</option>
+                                                          <option value="31">31</option>
+                                                      </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields1211441920" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked264104583" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Month Start Date Model End -->
+
+
+<!-- Over Time Model Start-->
+<div class="modal fade" id="overTimeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">残業時間単位</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1992359119" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <select class="form-control" name="over_time">
+                              <option value="30">30分</option><option value="60">60分</option><option value="90">90分</option><option value="120">120分</option><option value="150">150分</option><option value="180">180分</option><option value="210">210分</option><option value="240">240分</option><option value="270">270分</option><option value="300">300分</option><option value="330">330分</option><option value="360">360分</option><option value="390">390分</option><option value="420">420分</option><option value="450">450分</option><option value="480">480分</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields168803001" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1385114240" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Over Time Model End -->
+
+<!-- Advertiesments Model Start-->
+<div class="modal fade" id="addverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Advertiesments</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+            </div>
+            <form action="/users/addver_profile_edit" id="UserMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token161710967" /></div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="503" required="required">
+                        <div class="input select"><input type="hidden" name="data[User][advertisement]" value="" id="UserAdvertisement" />
+
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="0" id="UserAdvertisement0" /><label for="UserAdvertisement0">ホットペッパービューティー</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="1" id="UserAdvertisement1" /><label for="UserAdvertisement1">アイスポット</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="2" id="UserAdvertisement2" /><label for="UserAdvertisement2">ミニモ</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="3" id="UserAdvertisement3" /><label for="UserAdvertisement3">楽天ビューティー</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="4" id="UserAdvertisement4" /><label for="UserAdvertisement4">エキテン</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="5" id="UserAdvertisement5" /><label for="UserAdvertisement5">ネイルブック</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="6" id="UserAdvertisement6" /><label for="UserAdvertisement6">EPARK</label></div>
+                            <div class="checkbox-inline"><input type="checkbox" name="data[User][advertisement][]" value="7" id="UserAdvertisement7" /><label for="UserAdvertisement7">その他</label></div>
+                        </div>
+                        <!-- <input type="checkbox" checked="checked" name="other_advertisement"><br> -->
+                        <div class="input checkbox"><input type="hidden" name="data[User][other_advertisement]" id="UserOtherAdvertisement_" value="0" /><input type="checkbox" name="data[User][other_advertisement]" checked="checked" class="checkbox-inline" value="1" id="UserOtherAdvertisement"
+                            /><label for="UserOtherAdvertisement"></label></div>
+                    </div>
+                    <div class="form-group" id="autoUpdate" style="display: none;">
+                        <input type="text" class="form-control" name="new_advertisement" placeholder="広告を入力">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">クローズ</button>
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="fd213d82b480c79e64420b6f42d2f27932f1e22b%3A" id="TokenFields1491815076" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked442871493" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Advertiesments Model End -->
+
+
+
+<!-- Timing Model Start -->
+<div class="modal fade" id="timingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ticketModelLabel">営業時間設定</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <form action="/users/salon_working_days_time" id="UserWorkingDayMyShopForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="8412beed9291abc94b9410abf163a0e246490d44" id="Token1158546033" /></div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col-md-2">月</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtnmon" name="switchUncheckedmon" class="ToggleSwitchmon" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 monDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 monDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timemon" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timemon" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">火</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtntue" name="switchUncheckedtue" class="ToggleSwitchtue" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 tueDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 tueDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timetue" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timetue" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">水</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtnwed" name="switchUncheckedwed" class="ToggleSwitchwed" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 wedDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 wedDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timewed" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timewed" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">木</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtnthu" name="switchUncheckedthu" class="ToggleSwitchthu" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 thuDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 thuDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timethu" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timethu" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">金</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtnfri" name="switchUncheckedfri" class="ToggleSwitchfri" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 friDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 friDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timefri" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timefri" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">土</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtnsat" name="switchUncheckedsat" class="ToggleSwitchsat" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 satDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 satDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timesat" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timesat" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">日</div>
+                            <div class="col-md-2">
+                                <label class="switch text-right">
+                                     <input type="checkbox" id="toggleBtnsun" name="switchUncheckedsun" class="ToggleSwitchsun" value="0">
+                                     <span class="slider round"></span>
+                                 </label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class=" d-flex align-items-center justify-content-right mb-10 sunDayDiv">
+                                    <div class="mr-10" style="word-break: keep-all;">定休日</div>
+                                </div>
+                                <div style="display: none;" class="align-items-center justify-content-right mb-10 sunDayDivTime">
+                                    <div class="mr-10" style="word-break: keep-all;">営業時間</div>
+                                    <div class="mr-10">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="start_timesun" placeholder="10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="ui calendar form-group myShopTime">
+                                            <input type="text" class="form-control" name="end_timesun" placeholder="6:00" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">送信</button>
+                </div>
+                <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="414150fb3de27b2527aaed3ce58362ff79fac8f4%3A" id="TokenFields1388977201" /><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1743342493" /></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Timing Model End -->

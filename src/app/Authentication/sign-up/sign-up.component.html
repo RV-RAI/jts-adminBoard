@@ -1,0 +1,55 @@
+<div class="login-form-panel">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-9 col-lg-8">
+        <div class="loginMain">
+          <form (ngSubmit)="onSignup()" [formGroup]="signupForm">
+            <div class="compLogo text-center mb-50">
+              <img src="../../../assets/images/jts-board-logo.png">
+            </div>
+            <p *ngIf="datasaved" class="danger"> <i class="fas fa-check mr-10"></i> <span>{{msg}}</span> </p>
+            <div class="form-group">
+              <input type="text" type="hidden" class="form-control" formControlName="device_type">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="salon_name" placeholder="サロン名">
+              <span *ngIf="!signupForm.get('salon_name').valid && signupForm.get('salon_name').touched"></span>
+
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName="email" placeholder="メール">
+              <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"></span>
+            </div>
+            <div formGroupName="passwordMatch">
+              <div class="form-group">
+                <input type="password" class="form-control" formControlName="password" placeholder="パスワード">
+                <span
+                  *ngIf="!signupForm.get('passwordMatch').get('password').valid && signupForm.get('passwordMatch').get('password').touched">
+                </span>
+              </div>
+            </div>
+            <div formGroupName="passwordMatch">
+              <div class="form-group">
+                <input type="password" class="form-control" formControlName="confirm_password" placeholder="パスワードを認証する">
+                <span
+                  *ngIf="!signupForm.get('passwordMatch').get('confirm_password').valid && signupForm.get('passwordMatch').get('confirm_password').touched">
+                </span>
+
+                <span *ngIf="!signupForm.get('passwordMatch').valid && signupForm.get('passwordMatch').touched">
+                  password
+                  and confirm password must match !!!</span>
+              </div>
+            </div>
+            <div class="logBtn text-center mt-20">
+              <button class="btn loginBtn" [disabled]="!signupForm.valid">新規登録</button>
+              <!-- <a href="#" class="btn loginBtn"></a> -->
+            </div>
+            <div class="logBtn text-center mt-20">
+              <a routerLink="/login" class="btn loginBtn">新規登録</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+
+[data-pie-id] li:nth-child(0) {
+  color: blue;
+}
+[data-pie-id] li:nth-child(1) {
+  color: #4d00ff;
+}
+[data-pie-id] li:nth-child(2) {
+  color: #9900ff;
+}
+[data-pie-id] li:nth-child(3) {
+  color: #e500ff;
+}
+[data-pie-id] li:nth-child(4) {
+  color: #ff00cc;
+}
+[data-pie-id] li:nth-child(5) {
+  color: #ff0080;
+}
+[data-pie-id] li:nth-child(6) {
+  color: #ff0033;
+}
+ul[data-pie-id] {
+  list-style: none;
+  padding: 10px;
+}
+#my-cool-chart {
+  width:300px;
+}
+/*ul, #my-cool-chart {
+  float:left;
+}*/
+/* Color graph only */
+/*#my-cool-chart g[data-id="g1"] path {
+  fill:yellow;
+}*/
+
+
+
+
+#chart {
+  width: 650px;
+  height: 330px;
+  margin: 30px auto 0;
+  display: block;
+}
+#chart #numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+#chart #numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 29px;
+  border-bottom: 1px solid #444;
+  position: relative;
+  bottom: 30px;
+}
+#chart #numbers li:last-child {
+  height: 30px;
+}
+#chart #numbers li span {
+  /*color: #eee;*/
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+#chart #bars {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.2);
+  width: 600px;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px #444;
+}
+#chart #bars li {
+  display: table-cell;
+  width: 100px;
+  height: 300px;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+#chart #bars li .bar {
+  display: block;
+  width: 70px;
+  margin-left: 15px;
+  background: #49E;
+  position: absolute;
+  bottom: 0;
+}
+#chart #bars li .bar:hover {
+  background: #5AE;
+  cursor: pointer;
+}
+#chart #bars li .bar:hover:before {
+  color: white;
+  content: attr(data-percentage) '%';
+  position: relative;
+  bottom: 20px;
+}
+#chart #bars li span {
+  /*color: #eee;*/
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: center;
+}

@@ -1,0 +1,62 @@
+<div class="page-title ">
+  <div class="container salesHeader  d-flex">
+    <h4 class="">カスタマーノート履歴リスト</h4>
+    <div class="filterBtn ml-auto">
+      <a routerLink="/get_customer_analysis_dates/customer-note-sale" class="btn">
+        <img src="../../../assets/images/customer/sales-white.png" alt="" /> </a>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="container">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row mt-10">
+          <div class="col-md-4">
+            <h6>サービス合計金額 : 0円</h6>
+          </div>
+          <div class="col-md-4">
+            <h6>合計商品価格 : 0円</h6>
+          </div>
+          <div class="col-md-4 sub-heading mb-20">総合計価格 : 0円</div>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <div class="comment-box">
+          <ul class="comment-list"></ul>
+        </div>
+        <div class="row mb-20">
+          <div class="col-lg-6">
+            <form>
+              <input type="hidden" name="data[CustomerHistory][customer_id]" value="4877"
+                id="CustomerHistoryCustomerId" />
+              <div class="form-group">
+                <label for="note_image">画像をアップロード</label><input type="file" name="data[CustomerHistory][note_image]"
+                  id="note_image" class="form-control" />
+              </div>
+              <input class="btn" type="submit" value="提出する" />
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <form>
+              <input type="hidden" name="data[CustomerHistory][customer_id]" value="4877"
+                id="CustomerHistoryCustomerId" />
+              <div class="form-group">
+                <label for="note_text">コメント</label><textarea name="data[CustomerHistory][note_text]"
+                  class="form-control"></textarea>
+              </div>
+              <input class="btn" type="submit" value="コメント" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<app-footar></app-footar>
